@@ -32,9 +32,22 @@ SECRET_KEY = 'django-insecure--nz!fle+2y+s7^0zy%9!ee&$7x_vwg93reou8eano_4j%l2*ng
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'crud-django-postgress.onrender.com',
+    'django-asistencia-1.onrender.com',
     'localhost',
     '127.0.0.1',
+]
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+
+# 3. Configuraciones de seguridad para Render / Proxies
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-asistencia-1.onrender.com',
 ]
 
 
