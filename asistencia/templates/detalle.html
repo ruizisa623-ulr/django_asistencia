@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle</title>
+    <title>Detalle</title>
+</head>
+
+<body>
+
+<h1>Detalle de la asistencia</h1>
+
+<p>
+    <strong>tipo_documento:</strong>
+    {{ asistencia.tipo_documento }}
+</p>
+
+<p>
+    <strong>documento:</strong>
+    {{ asistencia.documento }}
+</p>
+
+<p>
+    <strong>nombre:</strong>
+    {{ asistencia.nombre }}
+</p>
+
+<p>
+    <strong>apellido:</strong>
+    {{ asistencia.apellido }}
+</p>
+
+<p>
+    <strong>whatsapp:</strong>
+    {{ asistencia.whatsapp }}
+</p>
+
+<p>
+    <strong>fecha:</strong>
+    {{ asistencia.fecha }}
+</p>
+
+<p>
+    <strong>asistio:</strong>
+    {{ asistencia.asistio|yesno:"true,false" }}
+</p>
+
+<br>
+
+<a href="/asistencia/editar/{{ asistencia.id }}/">
+    Editar
+</a>
+
+<br><br>
+
+<a href="/asistencia/lista/">
+    Volver
+</a>
+
+</body>
+
+</html>

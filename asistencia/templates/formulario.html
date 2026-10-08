@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+
+<h1>Asistencia</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <p>
+        <label>tipo_documento:</label><br>
+        <input
+            type="text"
+            name="tipo_documento"
+            value="{{ asistencia.tipo_documento|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>documento:</label><br>
+        <input
+            type="text"
+            name="documento"
+            value="{{ asistencia.documento|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>nombre:</label><br>
+        <input
+            type="text"
+            name="nombre"
+            value="{{ asistencia.nombre|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>apellido:</label><br>
+        <input
+            type="text"
+            name="apellido"
+            value="{{ asistencia.apellido|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>whatsapp:</label><br>
+        <input
+            type="text"
+            name="whatsapp"
+            value="{{ asistencia.whatsapp|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>fecha:</label><br>
+        <input
+            type="date"
+            name="fecha"
+            value="{{ asistencia.fecha|default:'' }}"
+            required
+        >
+    </p>
+
+    <p>
+        <label>asistio:</label><br>
+        <input
+            type="checkbox"
+            name="asistio"
+            {% if asistencia.asistio %}checked{% endif %}
+        >
+    </p>
+
+
+    <button type="submit">
+        Guardar
+    </button>
+
+</form>
+
+<br>
+
+<a href="/asistencia/lista/">
+    Ver asistencias
+</a>
+
+</body>
+
+</html>
