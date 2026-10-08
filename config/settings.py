@@ -31,7 +31,11 @@ SECRET_KEY = 'django-insecure--nz!fle+2y+s7^0zy%9!ee&$7x_vwg93reou8eano_4j%l2*ng
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'crud-django-postgress.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
